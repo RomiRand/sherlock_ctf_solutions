@@ -1,5 +1,6 @@
 # Sherlock x Secureum CTF
 Scoreboard is [here](https://ctf.sherlock.xyz/scoreboard)
+"Forked" from [here](https://github.com/sherlock-protocol/sherlock-ctf-0x0-private)
 
  Done               | User                  | Setup                                      | Challenge                                  |
  ------------------ | --------------------- | ------------------------------------------ | ------------------------------------------ |
