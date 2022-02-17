@@ -30,7 +30,7 @@ Scoreboard is [here](https://ctf.sherlock.xyz/scoreboard)
  :x:                | saianmk               | 0xbFB2C43021629C87b83C97F1FAC8D5f6b1078593 | 0xB5193e99607e7e63B49ACC48fCe0AC7A3676e4F6 |
  :heavy_check_mark: | sidduHERE             | 0x76BB80b4F1bA62eD2665f537f605C3593daCc458 | 0x43c3E684cfCD27083f7156E7d883FC7e449e1c59 |
  :x:                | smbsp                 | 0x838Ed804d95044516C16473C91388AE195da0B76 | 0xf8cd9B34e1B526Fef4D0eb2cA595D3D349F2301a |
- :x:                | t-nero                | 0x34e5EC7DA55039f332949a6d7dB506cD94594E12 | 0x2488764643d43f974b3819dc14400543B3DF9904 |
+ :heavy_check_mark: | t-nero                | 0x34e5EC7DA55039f332949a6d7dB506cD94594E12 | 0x2488764643d43f974b3819dc14400543B3DF9904 |
  :x:                | teryanarmen           | 0xAD392F2a981bDE60B43eC988a30ce2aE2d755eD2 | 0x8720D38BbC9212B8fD202BCcda07cff32b6F7920 |
  :x:                | Thro77le              | 0xBF3e5530aB7Dcba712E3A7fA99463d46eb6a0c8e | 0xd9C72eD9DdeF04D0Ab88aE2403C383Ffbd11a71c |
  :x:                | tqtsar                | 0x0dCb022a9927613f1B4B23F4F893515BA196c5c5 | 0x44898e95E81600e7aD0a85F7e1A5daA987BC1365 |

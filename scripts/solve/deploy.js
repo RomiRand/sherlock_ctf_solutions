@@ -135,9 +135,29 @@ async function main() {
     if (!solved)
     {
         const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
-        exploit = await EXPLOIT.deploy(challenge.address, lollercoaster.address, {value: parseEther("1")});
+        exploit = await EXPLOIT.deploy(challenge.address, {value: parseEther("1")});
         res = await exploit.exploit();
         await res.wait();
+        console.log(author, ":", await setup.isSolved());
+    }
+
+    // t-nero
+    author = "t-nero";
+    SETUP = await ethers.getContractFactory("contracts/" + author + "/Setup.sol:Setup");
+    setup = await SETUP.attach("0x34e5EC7DA55039f332949a6d7dB506cD94594E12");
+    challenge = await ethers.getContractAt("Monopoly", await setup.instance());
+    if (challenge.address != "0x2488764643d43f974b3819dc14400543B3DF9904")
+    {
+        throw("error");
+    }
+    solved = await setup.isSolved();
+    console.log(author, ":", solved);
+
+    if (!solved)
+    {
+        const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
+        exploit = await EXPLOIT.deploy(challenge.address, {value: parseEther("1")});
+        await (await exploit.play()).wait();
         console.log(author, ":", await setup.isSolved());
     }
 }

@@ -61,5 +61,11 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
       //gasPrice: 900000000000,
       accounts: [PRIVATE_KEY].filter((item) => item !== ""),
     },
+    /*hardhat: {
+      mining: {
+        auto: false,
+        interval: [3000, 6000]
+      }
+    }*/
   },
 };
