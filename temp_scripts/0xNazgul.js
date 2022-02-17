@@ -3,7 +3,7 @@ const { parseEther } = require("ethers/lib/utils");
 async function main() {
   // const [owner, attacker, addr2] = await ethers.getSigners();
   const SETUP = await ethers.getContractFactory("contracts/0xNazgul/Setup.sol:Setup");
-  const EXPLOIT = await ethers.getContractFactory("Exploit");
+  const EXPLOIT = await ethers.getContractFactory("contracts/0xNazgul/Exploit.sol:Exploit");
 
   const setup = await SETUP.deploy({ value: parseEther("1") });
   const col_exchange = await ethers.getContractAt(
