@@ -1,4 +1,5 @@
 # Sherlock x Secureum CTF
+Scoreboard is [here](https://ctf.sherlock.xyz/scoreboard)
 
  Done               | User                  | Setup                                      | Challenge                                  |
  ------------------ | --------------------- | ------------------------------------------ | ------------------------------------------ |
