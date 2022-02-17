@@ -1,5 +1,7 @@
 pragma solidity 0.8.4;
 
+import 'hardhat/console.sol';
+
 // MAX 200 LOC
 contract SheerLocking {
     address private immutable DEPLOYER;
@@ -78,8 +80,8 @@ contract SheerLocking {
 
     modifier lockOne1() {
         require(!_blackList1[tx.origin] && !_blackList1[msg.sender]);
-            _blackList1[tx.origin] = true;
-            _blackList1[msg.sender] = true;
+        _blackList1[tx.origin] = true;
+        _blackList1[msg.sender] = true;
         _;
     }
 
@@ -143,6 +145,7 @@ contract SheerLocking {
             && keccak256(bytes(string(abi.encodePacked(passphrase1, passphrase2, passphrase3, passphrase4, passphrase5)))) == keccak256(bytes(string(abi.encodePacked(EEQV6UJ310, BQ6TQGCX9N, IRT8I6TGHK))))) {            
             _successList1[tx.origin] = true;
             _blackList1[tx.origin] = _blackList1[msg.sender] = false;
+            console.log("unSheerLock1 finished");
         }
     }
     function unSheerLock2(string calldata passphrase4, string calldata passphrase2, string calldata passphrase3, string calldata passphrase1, string calldata passphrase5, bytes8 keyThree) external payable lockOne2 lockTwo lockThree1(keyThree) lockFour lockFive {
@@ -150,6 +153,7 @@ contract SheerLocking {
             && keccak256(bytes(string(abi.encodePacked(passphrase1, passphrase2, passphrase3, passphrase5)))) == keccak256(bytes(string(abi.encodePacked(V3NF4M1LQS, WC0PT98SKH, YEZSBBM28A))))) {            
             _successList2[tx.origin] = true;
             _blackList2[tx.origin] = _blackList2[msg.sender] = false;
+            console.log("unSheerLock2 finished");
         }
     }
     function unSheerLock3(string calldata passphrase1, string calldata passphrase2, string calldata passphrase3, string calldata passphrase4, string calldata passphrase5, bytes8 keyThree) external payable lockOne3 lockTwo lockThree3(keyThree) lockFour lockFive {
@@ -157,6 +161,7 @@ contract SheerLocking {
             && keccak256(bytes(string(abi.encodePacked(passphrase1, passphrase2, passphrase3, passphrase4, passphrase5)))) == keccak256(bytes(string(abi.encodePacked(P4SRT2J78Q, BQ6TQGCX9N, PRYY37W9KW, LLQTQAOTQV, OR636UE7J5))))) {            
             _successList3[tx.origin] = true;
             _blackList3[tx.origin] = _blackList3[msg.sender] = false;
+            console.log("unSheerLock3 finished");
         }
     }
     function unSheerLock4(string calldata passphrase1, string calldata passphrase2, string calldata passphrase3, string calldata passphrase4, string calldata passphrase5, bytes8 keyThree) external payable lockOne4 lockTwo lockThree3(keyThree) lockFour lockFive {
@@ -164,6 +169,7 @@ contract SheerLocking {
         && keccak256(bytes(string(abi.encodePacked(passphrase5, passphrase1, passphrase3, passphrase4)))) == keccak256(bytes("John Watson had a role in Ali G (Ricky C) "))) {            
             _successList4[tx.origin] = true;
             _blackList4[tx.origin] = _blackList4[msg.sender] = false;
+            console.log("unSheerLock4 finished");
         }
     }
     function unSheerLock5(string calldata passphrase3, string calldata passphrase2, string calldata passphrase1, string calldata passphrase4, string calldata passphrase5, bytes8 keyThree) external payable lockOne5 lockTwo lockThree1(keyThree) lockFour lockFive {
@@ -171,6 +177,7 @@ contract SheerLocking {
             && keccak256(bytes(string(abi.encodePacked(passphrase3, passphrase2, passphrase1, passphrase4, passphrase5)))) == keccak256(bytes(string(abi.encodePacked(BBD0FG8JUZ,": ",JM7VGZT6DR, M1PGA9WP8G, KHZPZL6OFX, "'s big bro"))))) {            
             _successList5[tx.origin] = true;
             _blackList5[tx.origin] = _blackList5[msg.sender] = false;
+            console.log("unSheerLock5 finished");
         }
     }
 
@@ -179,6 +186,7 @@ contract SheerLocking {
             && keccak256(bytes(string(abi.encodePacked(passphrase1, passphrase2, passphrase3, passphrase5)))) == keccak256(bytes("Sir Arthur Conan Doyle died in 1930, so copyright on Sherlock Holmes expired in 2000 in the UK")))  {            
             _successList6[tx.origin] = true;
             _blackList6[tx.origin] = _blackList6[msg.sender] = false;
+            console.log("unSheerLock6 finished");
         }
     }
 
@@ -187,6 +195,7 @@ contract SheerLocking {
             && keccak256(bytes(string(abi.encodePacked(passphrase5, passphrase2, passphrase3, passphrase4, passphrase1)))) == keccak256(bytes(string(abi.encodePacked(H7CADDWW9U, M1PGA9WP8G, XGV62N0A66, FNFEYDC4ZP)))))  {            
             _successList7[tx.origin] = true;
             _blackList7[tx.origin] = _blackList7[msg.sender] = false;
+            console.log("unSheerLock7 finished");
         }
     }
 
