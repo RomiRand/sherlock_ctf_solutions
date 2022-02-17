@@ -102,7 +102,7 @@ async function main() {
     author = "sidduHERE";
     SETUP = await ethers.getContractFactory("contracts/" + author + "/Setup.sol:Setup");
     setup = await SETUP.attach("0x76BB80b4F1bA62eD2665f537f605C3593daCc458");
-    challenge = await ethers.getContractAt("contracts/sidduHERE/ExampleQuizExploit.sol:ExampleQuizExploit", await setup.instance());
+    challenge = await ethers.getContractAt("contracts/" + author + "/ExampleQuizExploit.sol:ExampleQuizExploit", await setup.instance());
     if (challenge.address != "0x43c3E684cfCD27083f7156E7d883FC7e449e1c59")
     {
         throw("error");
@@ -115,6 +115,29 @@ async function main() {
         const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
         exploit = await EXPLOIT.deploy(challenge.address, {value: parseEther("1")});
         await exploit.exploit();
+        console.log(author, ":", await setup.isSolved());
+    }
+
+    // iflp
+    author = "iflp";
+    SETUP = await ethers.getContractFactory("contracts/" + author + "/Setup.sol:Setup");
+    setup = await SETUP.attach("0x38B500E61267Ee672c823bE3a8fA559236Bd1FD3");
+    LOLLERCOASTER = await ethers.getContractFactory("Lollercoaster");
+    lollercoaster = await LOLLERCOASTER.attach("0x25Be61724B64117DC9aC9DDd2A06B7DEc052D5cb");
+    challenge = await ethers.getContractAt("contracts/" + author + "/ExampleQuizExploit.sol:ExampleQuizExploit", await setup.instance());
+    if (challenge.address != "0x070Cd04E0Ab2bF1E10411f7aB1b0972164F72879")
+    {
+        throw("error");
+    }
+    solved = await setup.isSolved();
+    console.log(author, ":", solved);
+
+    if (!solved)
+    {
+        const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
+        exploit = await EXPLOIT.deploy(challenge.address, lollercoaster.address, {value: parseEther("1")});
+        res = await exploit.exploit();
+        await res.wait();
         console.log(author, ":", await setup.isSolved());
     }
 }
