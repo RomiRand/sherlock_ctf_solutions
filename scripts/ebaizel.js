@@ -13,7 +13,6 @@ async function main() {
 
   console.log("solved:", await setup.isSolved());
   exploit = await EXPLOIT.deploy(victim.address);
-  await exploit.exploit();
   console.log("solved:", await setup.isSolved());
 }
 

@@ -11,7 +11,7 @@ async function main() {
   );
 
   console.log("solved:", await setup.isSolved());
-  exploit = await EXPLOIT.deploy(victim.address, { value: parseEther("1")});
+  exploit = await EXPLOIT.deploy(victim.address, {value: parseEther("1")});
   console.log("solved:", await setup.isSolved());
 }
 
