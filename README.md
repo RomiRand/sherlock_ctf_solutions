@@ -33,6 +33,6 @@ Scoreboard is [here](https://ctf.sherlock.xyz/scoreboard)
  :heavy_check_mark: | t-nero                | 0x34e5EC7DA55039f332949a6d7dB506cD94594E12 | 0x2488764643d43f974b3819dc14400543B3DF9904 |
  :x:                | teryanarmen           | 0xAD392F2a981bDE60B43eC988a30ce2aE2d755eD2 | 0x8720D38BbC9212B8fD202BCcda07cff32b6F7920 |
  :x:                | Thro77le              | 0xBF3e5530aB7Dcba712E3A7fA99463d46eb6a0c8e | 0xd9C72eD9DdeF04D0Ab88aE2403C383Ffbd11a71c |
- :x:                | tqtsar                | 0x0dCb022a9927613f1B4B23F4F893515BA196c5c5 | 0x44898e95E81600e7aD0a85F7e1A5daA987BC1365 |
+ :heavy_check_mark: | tqtsar                | 0x0dCb022a9927613f1B4B23F4F893515BA196c5c5 | 0x44898e95E81600e7aD0a85F7e1A5daA987BC1365 |
  :x:                | wuwe1                 | 0xB1F9187d9FFCd22fE2c26FeF3E8b8F90C31Ae885 | 0x34D471c17D0fb5eF3029Bda742AE4bed05ff5eB4 |
  :x:                | ych18                 | 0x40D1e6Fa69957f4c66461b8c8AB60108265F52b2 | 0x482b62c99e9ee97126b8a56828f105e07904fd03 |
