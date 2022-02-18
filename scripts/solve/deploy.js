@@ -182,6 +182,28 @@ async function main() {
         await res.wait();
         console.log(author, ":", await setup.isSolved());
     }
+
+    // mhchia
+    author = "mhchia";
+    SETUP = await ethers.getContractFactory("contracts/" + author + "/Setup.sol:Setup");
+    setup = await SETUP.attach("0x6c06959586640De3BcdE69BDcEbF2efDa5d3983B");
+    challenge = await ethers.getContractAt("CrowdFunding", await setup.instance());
+    if (challenge.address != "0xC2c83168E3bf85A5DEabF25f9f9873085C201C79")
+    {
+        console.log("address:", challenge.address);
+        throw("error");
+    }
+    solved = await setup.isSolved();
+    console.log(author, ":", solved);
+
+    if (!solved)
+    {
+        const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
+        exploit = await EXPLOIT.deploy(challenge.address, {value: parseEther("1")});
+        res = await exploit.exploit();
+        await res.wait();
+        console.log(author, ":", await setup.isSolved());
+    }
 }
 
 
