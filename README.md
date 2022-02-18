@@ -6,7 +6,7 @@ Scoreboard is [here](https://ctf.sherlock.xyz/scoreboard)
  ------------------ | --------------------- | ------------------------------------------ | ------------------------------------------ |
  :heavy_check_mark: | 0xmoostorm            | 0x5e40D0d98126323b81246008d386a93BA091704f | 0xE442a00a4587677c945598e19DF41822e851c1DE |
  :x:                | 0xNazgul (unsolvable) | 0xd80960575d177A09FEb8497dBaE9F6583fcFe297 | 0x75b665c3695293659949c18719d046089F423834 |
- :x:                | agusduha              | 0x459D9C80482c541deC1Aa491209EF598BF7c9344 | 0x4B8df63820cD31D063a160e1C40f8583227591cB |
+ :heavy_check_mark: | agusduha              | 0x459D9C80482c541deC1Aa491209EF598BF7c9344 | 0x1020dFFD73141616fa7A931feE757DC9114B79D9 |
  :x:                | bahurum               | 0xABF1f66a9fb48F3f5b75C8A83FB5854A9d906343 | 0x68C3CA33c766cd60E4Af98D697EBd541B4DA7968 |
  :x:                | band0x                | 0x46C9489797c5647F850dD3A5bcB13C240bcd383A | 0xD2034a50C5Adc8A190D4f8c8EE18643Ab8A0ff05 |
  :x:                | Baraa42               | 0xFfb20eF6668F8160934FD84b60F3DeD127F787Aa | 0x664152c40e3ba69f3791dd07edb6dbf4444ccf23 |

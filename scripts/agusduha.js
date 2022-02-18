@@ -14,7 +14,8 @@ async function main() {
 
   const vault = await ethers.getContractAt("GovernanceTimelock", await challenge.owner());
   exploit = await EXPLOIT.deploy(challenge.address);
-  await exploit.exploit();
+  res = await exploit.exploit();
+  await res.wait();
   console.log("solved:", await setup.isSolved());
 }
 

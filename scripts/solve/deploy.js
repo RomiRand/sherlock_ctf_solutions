@@ -160,7 +160,30 @@ async function main() {
         await (await exploit.play()).wait();
         console.log(author, ":", await setup.isSolved());
     }
+
+    // agusduha
+    author = "agusduha";
+    SETUP = await ethers.getContractFactory("contracts/" + author + "/Setup.sol:Setup");
+    setup = await SETUP.attach("0x459D9C80482c541deC1Aa491209EF598BF7c9344");
+    challenge = await ethers.getContractAt("ERC1967Proxy", await setup.instance());
+    if (challenge.address != "0x1020dFFD73141616fa7A931feE757DC9114B79D9")
+    {
+        console.log("address:", challenge.address);
+        throw("error");
+    }
+    solved = await setup.isSolved();
+    console.log(author, ":", solved);
+
+    if (!solved)
+    {
+        const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
+        exploit = await EXPLOIT.deploy(challenge.address);
+        res = await exploit.exploit();
+        await res.wait();
+        console.log(author, ":", await setup.isSolved());
+    }
 }
+
 
 main()
   .then(() => process.exit(0))
