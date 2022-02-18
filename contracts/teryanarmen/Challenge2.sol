@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.7.6;
 // fix
-import "@openzeppelin/contracts/utils/Address.sol";
+import "@openzeppelin/contracts-3/utils/Address.sol";
 
 interface ICalled {
     function sup() external returns (uint256);
