@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity 0.7.3;
-import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts-3/access/Ownable.sol";
 
 /** @title Casino
  *  @dev This contract implement is a casino style game contract with an ERC20 like interface.

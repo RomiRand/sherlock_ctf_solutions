@@ -2,10 +2,10 @@
 
 pragma solidity 0.8.4;
 
-import "@ozcontracts/token/ERC20/ERC20.sol";
-import "@ozupgrade/access/OwnableUpgradeable.sol";
-import "@ozupgrade/proxy/utils/Initializable.sol";
-import "@ozupgrade/proxy/utils/UUPSUpgradeable.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 
 contract Superfluid is Initializable, OwnableUpgradeable, UUPSUpgradeable {
     error Unauthorized();

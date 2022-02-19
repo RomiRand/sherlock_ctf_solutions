@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.4;
 
-import "@ozcontracts/proxy/ERC1967/ERC1967Proxy.sol";
-import "@ozcontracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "./ISetup.sol";
 import "./Superfluid.sol";
 

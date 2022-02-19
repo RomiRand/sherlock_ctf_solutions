@@ -2,9 +2,9 @@
 
 pragma solidity 0.8.0;
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
-import "@openzeppelin/contracts/token/ERC777/ERC777.sol";
+import "@openzeppelin/contracts-4/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts-4/token/ERC20/utils/SafeERC20.sol";
+import "@openzeppelin/contracts-4/token/ERC777/ERC777.sol";
 
 
 contract GovToken is ERC777 {
