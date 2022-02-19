@@ -102,53 +102,81 @@ contract AmusementPark {
         {
             attacker.call("");
         }
-        else if (first > 5)
-        {
-            if (second != 3)
-            {
-                first++;
-                second++;
-                attacker.call("");
-            }
-            else if (third < 3)
-            {
-                first++;
-                third++;
-                attacker.call("");
-            }
-        }
         else
         {
-            if (uint256(bytes32(houseLayout[0])) == 0)
+            first++;
+            if (first > 6)
             {
                 second++;
+                if (second != 4)
+                {
+                    attacker.call("");
+                }
+                else if (third < 3)
+                {
+                    third++;
+                    attacker.call("");
+                }
+                else
+                {
+                    third++;
+                    if (uint256(bytes32(houseLayout[0])) < 1)
+                    {
+                        second++;
+                    }
+                    first++;
+                    require(first % third++ != second);
+                    third++;
+                    second++;
+                }
             }
-            first++;
-            require(first % third != second);
-            second++;
-            third++;
+            else
+            {
+                if (uint256(bytes32(houseLayout[0])) < 1)
+                {
+                    second++;
+                }
+                first++;
+                require(first % third++ != second);
+                third++;
+                second++;
+            }
         }
+
 
         if (uint256(bytes32(houseLayout[1])) <= 2)
         {
             // NOOP
         }
-        else if (uint256(bytes32(houseLayout[2])) == 0 && first == second)
+        else if (uint256(bytes32(houseLayout[2])) == 0)
         {
             first++;
             second++;
-        }
-        else if (third + 1 == uint256(bytes32(houseLayout[2])))
-        {
-            third++;
+            if (first != second)
+            {
+                third++;
+                if (uint256(bytes32(houseLayout[2])) != third)
+                {
+                    first--;
+                    second--;
+                    third--;
+                    attacker.call("");
+                }
+            }
         }
         else
         {
-            first--;
-            second--;
-            third--;
-            attacker.call("");
+            third++;
+            if (uint256(bytes32(houseLayout[2])) != third)
+            {
+                first--;
+                second--;
+                third--;
+                attacker.call("");
+            }
         }
+
+
 
         require((first == 9 && second == 5 && third == 8) || BigSmile);
         console.log("DONEEEEEEEEEEEEEEEEEEEE");
