@@ -24,7 +24,7 @@ my repo is [here](https://github.com/sherlock-protocol/sherlock-ctf-0x0-RomiRand
  :heavy_check_mark: | johngish              | 0x427255B0e21A7f0D809c7cE854569A10df44378d | 0x2Dec5971b627485A50af67a921C6ADB6CC3ffCe4 |
  :heavy_check_mark: | JustDravee            | 0x1f5c09a7d6a9B30b43DDDAABD384425DEe0ADe91 | 0xc7e13b9c94Eb3902Fa272E83Bb4D19392d09eF4d |
  :x:                | KahanMajmudar         |                                            |
- :x:                | kankan-0              | 0x9e6C0511d07695420A0B57003d6e8c133Cd0185d | 0x7e18A61fd65F5E5Cf693257235a0A1F360aBE7d8 |
+ :heavy_check_mark: | kankan-0              | 0x9e6C0511d07695420A0B57003d6e8c133Cd0185d | 0x7e18A61fd65F5E5Cf693257235a0A1F360aBE7d8 |
  :x:                | kuldeep23907          | 0x0ABBC49482097b530516d385B4dD183b59073f1C | 0x7DC33b58B3258a745C0ADbfC46d8A4B543254f24 |
  :x:                | lucyoa                | 0xe95dF719Fc223CD8E57bA9bAAb8E86bEDF3e5d69 | 0x4C9bf01acEA21DDC7Ca25d49d301B8bDd63c1966 |
  :x:                | luksgrin              | 0x9BDCf71048DFd8ef1C03a7ae3EDe79F04A096B7F | 0x137A5B4bB53A62BD1Db46e563b89D1884afaC0Ac |
