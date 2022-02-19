@@ -87,35 +87,35 @@ contract AmusementParkOrig {
 
 
 
-    uint8 MIRR0R = 0;
-    uint8 MlRROR = 0;
-    uint8 MlRR0R = 0;
+    uint8 first = 0;
+    uint8 second = 0;
+    uint8 third = 0;
     function _HouseOfMirrors(bytes[] calldata houseLayout) external insidePark {
 
-        if (uint256(bytes32(houseLayout[0])) >= 2 || (MIRR0R++ > 5 && MlRROR++ != 3 || ++MlRR0R < 4)) {
+        if (uint256(bytes32(houseLayout[0])) >= 2 || (first++ > 5 && second++ != 3 || ++third < 4)) {
             attacker.call("");
         }
         else {
-            uint256(bytes32(houseLayout[0])) < 1 ? MlRROR++ : MlRROR;
-            require(++MIRR0R % MlRR0R++ != MlRROR++);
+            uint256(bytes32(houseLayout[0])) < 1 ? second++ : second;
+            require(++first % third++ != second++);
         }
-        if (uint256(bytes32(houseLayout[1])) <= 2 || (uint256(bytes32(houseLayout[2])) == 0 ? MIRR0R++ == MlRROR++ : false || ++MlRR0R == uint256(bytes32(houseLayout[2])))) {
+        if (uint256(bytes32(houseLayout[1])) <= 2 || (uint256(bytes32(houseLayout[2])) == 0 ? first++ == second++ : false || ++third == uint256(bytes32(houseLayout[2])))) {
         }
         else{
-            MIRR0R--;
-            MlRROR--;
-            MlRR0R--;
+            first--;
+            second--;
+            third--;
             attacker.call("");
         }
 
-        require((MIRR0R == 9 && MlRROR == 5 && MlRR0R == 8) || BigSmile);
+        require((first == 9 && second == 5 && third == 8) || BigSmile);
 
         bytes memory nextRide = houseLayout[3];
         HouseOfMirrors = true;
         address(this).call(nextRide);
-        MIRR0R = 0;
-        MlRROR = 0;
-        MlRR0R = 0;
+        first = 0;
+        second = 0;
+        third = 0;
         HouseOfMirrors = false;
     }
 

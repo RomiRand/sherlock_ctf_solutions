@@ -102,16 +102,20 @@ contract AmusementPark {
         {
             attacker.call("");
         }
-        else if (first > 5 && second != 3)
+        else if (first > 5)
         {
-            first++;
-            second++;
-            attacker.call("");
-        }
-        else if (third < 3)
-        {
-            third++;
-            attacker.call("");
+            if (second != 3)
+            {
+                first++;
+                second++;
+                attacker.call("");
+            }
+            else if (third < 3)
+            {
+                first++;
+                third++;
+                attacker.call("");
+            }
         }
         else
         {
