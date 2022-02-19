@@ -38,4 +38,4 @@ keys are [here](https://gist.github.com/Evert0x/ec9619095b2ba8e9c7af673b42a7559e
  :heavy_check_mark: | Thro77le              | 0xBF3e5530aB7Dcba712E3A7fA99463d46eb6a0c8e | 0xd9C72eD9DdeF04D0Ab88aE2403C383Ffbd11a71c |
  :heavy_check_mark: | tqtsar                | 0x0dCb022a9927613f1B4B23F4F893515BA196c5c5 | 0x44898e95E81600e7aD0a85F7e1A5daA987BC1365 |
  :x:                | wuwe1                 | 0xB1F9187d9FFCd22fE2c26FeF3E8b8F90C31Ae885 | 0x34D471c17D0fb5eF3029Bda742AE4bed05ff5eB4 |
- :x:                | ych18                 | 0x40D1e6Fa69957f4c66461b8c8AB60108265F52b2 | 0x482b62c99e9ee97126b8a56828f105e07904fd03 |
+ :heavy_check_mark: | ych18                 | 0x40D1e6Fa69957f4c66461b8c8AB60108265F52b2 | 0x482b62c99e9eE97126b8a56828f105E07904fD03 |

@@ -273,6 +273,26 @@ async function main() {
         exploit = await EXPLOIT.deploy(challenge.address, formatUnits(ctf_seed, "wei"), factory.address, {value: parseEther("1")});
         console.log(author, ":", await setup.isSolved());
     }
+
+    // ych18
+    author = "ych18";
+    SETUP = await ethers.getContractFactory("contracts/" + author + "/Setup.sol:Setup");
+    setup = await SETUP.attach("0x40D1e6Fa69957f4c66461b8c8AB60108265F52b2");
+    challenge = await ethers.getContractAt("FunnyChallenges", await setup.instance());
+    if (challenge.address != "0x482b62c99e9eE97126b8a56828f105E07904fD03")
+    {
+        console.log("address:", challenge.address);
+        throw("error");
+    }
+    solved = await setup.isSolved();
+    console.log(author, ":", solved);
+
+    if (!solved)
+    {
+        const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
+        exploit = await EXPLOIT.deploy(challenge.address, {value: parseEther("2")});
+        console.log(author, ":", await setup.isSolved());
+    }
 }
 
 
