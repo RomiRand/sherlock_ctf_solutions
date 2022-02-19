@@ -293,6 +293,26 @@ async function main() {
         exploit = await EXPLOIT.deploy(challenge.address, {value: parseEther("2")});
         console.log(author, ":", await setup.isSolved());
     }
+
+    // naps62
+    author = "naps62";
+    SETUP = await ethers.getContractFactory("contracts/" + author + "/Setup.sol:Setup");
+    setup = await SETUP.attach("0x4742FD1862E94dc74AeD62A96B6374E68e658f80");
+    challenge = await ethers.getContractAt("BuiltByANoob", await setup.instance());
+    if (challenge.address != "0xA1BCb047E9dc4aCcB36c14288239f9283DF3E68e")
+    {
+        console.log("address:", challenge.address);
+        throw("error");
+    }
+    solved = await setup.isSolved();
+    console.log(author, ":", solved);
+
+    if (!solved)
+    {
+        const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
+        exploit = await EXPLOIT.deploy(challenge.address);
+        console.log(author, ":", await setup.isSolved());
+    }
 }
 
 

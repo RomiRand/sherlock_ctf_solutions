@@ -5,6 +5,9 @@ Scoreboard is [here](https://ctf.sherlock.xyz/scoreboard)
 
 keys are [here](https://gist.github.com/Evert0x/ec9619095b2ba8e9c7af673b42a7559e)
 
+my repo is [here](https://github.com/sherlock-protocol/sherlock-ctf-0x0-RomiRand)
+
+
  Done               | User                  | Setup                                      | Challenge                                  |
  ------------------ | --------------------- | ------------------------------------------ | ------------------------------------------ |
  :heavy_check_mark: | 0xmoostorm            | 0x5e40D0d98126323b81246008d386a93BA091704f | 0xE442a00a4587677c945598e19DF41822e851c1DE |
@@ -26,7 +29,7 @@ keys are [here](https://gist.github.com/Evert0x/ec9619095b2ba8e9c7af673b42a7559e
  :x:                | lucyoa                | 0xe95dF719Fc223CD8E57bA9bAAb8E86bEDF3e5d69 | 0x4C9bf01acEA21DDC7Ca25d49d301B8bDd63c1966 |
  :x:                | luksgrin              | 0x9BDCf71048DFd8ef1C03a7ae3EDe79F04A096B7F | 0x137A5B4bB53A62BD1Db46e563b89D1884afaC0Ac |
  :heavy_check_mark: | mhchia                | 0x6c06959586640De3BcdE69BDcEbF2efDa5d3983B | 0xC2c83168E3bf85A5DEabF25f9f9873085C201C79 |
- :x:                | naps62                | 0x4742FD1862E94dc74AeD62A96B6374E68e658f80 | 0xA1BCb047E9dc4aCcB36c14288239f9283DF3E68e |
+ :heavy_check_mark: | naps62                | 0x4742FD1862E94dc74AeD62A96B6374E68e658f80 | 0xA1BCb047E9dc4aCcB36c14288239f9283DF3E68e |
  :x:                | PeterisPrieditis      | 0x64A9fcaD8D299aF9B1a96dA17458c0b3D876b687 | 0x94f12A6fb7D9B0cBBc43CdDC6A4827649f757c72 |
  :x:                | plotchy               | 0x869a2D3856BE26cfE77cC7Cb6579219d13373Bc9 | 0xebb997D2FabE73df8cF88Ab28b82B70741592525 |
  :x:                | RomiRand              | 0x85CCd0c58Fe07DC6716f1EfCcAba0164b97ae66B | 0x3dc21F58F3b77aDD4AD5D40992C0B431bdFFc6B8 |
