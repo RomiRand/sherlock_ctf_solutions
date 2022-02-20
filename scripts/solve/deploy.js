@@ -376,6 +376,27 @@ async function main() {
         await (await exploit.exploit()).wait();
         console.log(author, ":", await setup.isSolved());
     }
+
+    // plotchy
+    author = "plotchy";
+    SETUP = await ethers.getContractFactory("contracts/" + author + "/Setup.sol:Setup");
+    setup = await SETUP.attach("0x869a2D3856BE26cfE77cC7Cb6579219d13373Bc9");
+    challenge = await ethers.getContractAt("AmusementPark", await setup.instance());
+    if (challenge.address != "0xebb997D2FabE73df8cF88Ab28b82B70741592525")
+    {
+        console.log("address:", challenge.address);
+        throw("error");
+    }
+    solved = await setup.isSolved();
+    console.log(author, ":", solved);
+
+    if (!solved)
+    {
+        const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
+        exploit = await EXPLOIT.deploy(challenge.address);
+        await (await exploit.play()).wait();
+        console.log(author, ":", await setup.isSolved());
+    }
 }
 
 

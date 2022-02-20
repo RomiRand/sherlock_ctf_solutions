@@ -59,13 +59,15 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
     sherlock: {
       url: `https://ctf.sherlock.xyz/${SHERLOCK_CTF_KEY}`,
       //gasPrice: 900000000000,
+      gas: 10000000,
       accounts: [PRIVATE_KEY].filter((item) => item !== ""),
     },
-    /*hardhat: {
+    localhost: {
       mining: {
         auto: false,
-        interval: [3000, 6000]
-      }
-    }*/
+        interval: [10000, 6000],
+      },
+      gas: 10000000,
+    }
   },
 };

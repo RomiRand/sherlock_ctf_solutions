@@ -31,7 +31,7 @@ my repo is [here](https://github.com/sherlock-protocol/sherlock-ctf-0x0-RomiRand
  :heavy_check_mark: | mhchia                | 0x6c06959586640De3BcdE69BDcEbF2efDa5d3983B | 0xC2c83168E3bf85A5DEabF25f9f9873085C201C79 |
  :heavy_check_mark: | naps62                | 0x4742FD1862E94dc74AeD62A96B6374E68e658f80 | 0xA1BCb047E9dc4aCcB36c14288239f9283DF3E68e |
  :x:                | PeterisPrieditis      | 0x64A9fcaD8D299aF9B1a96dA17458c0b3D876b687 | 0x94f12A6fb7D9B0cBBc43CdDC6A4827649f757c72 |
- :x:                | plotchy               | 0x869a2D3856BE26cfE77cC7Cb6579219d13373Bc9 | 0xebb997D2FabE73df8cF88Ab28b82B70741592525 |
+ :heavy_check_mark: | plotchy               | 0x869a2D3856BE26cfE77cC7Cb6579219d13373Bc9 | 0xebb997D2FabE73df8cF88Ab28b82B70741592525 |
  :x:                | RomiRand              | 0x85CCd0c58Fe07DC6716f1EfCcAba0164b97ae66B | 0x3dc21F58F3b77aDD4AD5D40992C0B431bdFFc6B8 |
  :x:                | saianmk               | 0xbFB2C43021629C87b83C97F1FAC8D5f6b1078593 | 0xB5193e99607e7e63B49ACC48fCe0AC7A3676e4F6 |
  :heavy_check_mark: | sidduHERE             | 0x76BB80b4F1bA62eD2665f537f605C3593daCc458 | 0x43c3E684cfCD27083f7156E7d883FC7e449e1c59 |

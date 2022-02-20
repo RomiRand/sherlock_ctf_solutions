@@ -1,8 +1,6 @@
 //SPDX-License-Identifier: MIT
 pragma solidity 0.8.11;
 
-import 'hardhat/console.sol';
-
 //max 200 LoC
 contract AmusementPark {
 
@@ -42,7 +40,6 @@ contract AmusementPark {
     }
 
     function _Carousel(bytes calldata ticket) external insidePark {
-        console.log("Carousel");
 
         bytes memory nextRide;
         for(uint s = ticket.length; s > 0; s--) {
@@ -55,16 +52,16 @@ contract AmusementPark {
     }
 
     function _BumperCars(bytes calldata blueCar, uint40 redCar, bytes calldata yellowCar) external insidePark {
-        console.log("BumperCars");
         bytes memory nextRide;
 
         require(keccak256(blueCar) == keccak256("blue"));
         require(redCar == uint40(bytes5(bytes.concat("255", "0", "0"))));
         bytes memory crash = abi.encodePacked(blueCar, redCar, yellowCar);
 
-        (, bytes memory _rainbowCar) = abi.decode(crash, (uint256, bytes));
+        ( , bytes memory _rainbowCar) = abi.decode(crash, (uint256, bytes));
+
         nextRide = abi.encodePacked(_rainbowCar);
-        
+
         BumperCars = true;
         address(this).call(nextRide);
         BumperCars = false;
@@ -73,15 +70,15 @@ contract AmusementPark {
     enum ride { UP, DOWN, LEFT, RIGHT, LOOPdeLOOP, EXIT }
 
     function _Rollercoaster(bytes[] memory ticket) external insidePark {
-        console.log("Rollercoaster");
         ride[8] memory rideFeatures = [ride.UP, ride.LEFT, ride.UP, ride.DOWN, ride.LOOPdeLOOP, ride.RIGHT, ride.DOWN, ride.EXIT];
 
         uint256 cartChain = uint256(bytes32(ticket[0]));
         for (uint256 count = 0; count < 8; count++) {
             uint256 singleCart = cartChain & 7;
-            require(uint256(rideFeatures[count]) == singleCart, "failed!");
+            require(uint256(rideFeatures[count]) == singleCart);
             cartChain >>= 3;
         }
+
         bytes memory nextRide = ticket[1];
         Rollercoaster = true;
         address(this).call(nextRide);
@@ -90,102 +87,35 @@ contract AmusementPark {
 
 
 
-    uint8 first = 0;        // 9
-    uint8 second = 0;       // 5
-    uint8 third = 0;        // 8
-    // can't increase first faster than second... just one way:
-    // wrap - no.. no unchecked :(
+    uint8 MIRR0R = 0;
+    uint8 MlRROR = 0;
+    uint8 MlRR0R = 0;
     function _HouseOfMirrors(bytes[] calldata houseLayout) external insidePark {
-        console.log("Mirrors");
 
-        if (uint256(bytes32(houseLayout[0])) >= 2)
-        {
+        if (uint256(bytes32(houseLayout[0])) >= 2 || (MIRR0R++ > 5 && MlRROR++ != 3 || ++MlRR0R < 4)) {
             attacker.call("");
         }
-        else
-        {
-            first++;
-            if (first > 6)
-            {
-                second++;
-                if (second != 4)
-                {
-                    attacker.call("");
-                }
-                else if (third < 3)
-                {
-                    third++;
-                    attacker.call("");
-                }
-                else
-                {
-                    third++;
-                    if (uint256(bytes32(houseLayout[0])) < 1)
-                    {
-                        second++;
-                    }
-                    first++;
-                    require(first % third++ != second);
-                    third++;
-                    second++;
-                }
-            }
-            else
-            {
-                if (uint256(bytes32(houseLayout[0])) < 1)
-                {
-                    second++;
-                }
-                first++;
-                require(first % third++ != second);
-                third++;
-                second++;
-            }
+        else {
+            uint256(bytes32(houseLayout[0])) < 1 ? MlRROR++ : MlRROR;
+            require(++MIRR0R % MlRR0R++ != MlRROR++);
+        }
+        if (uint256(bytes32(houseLayout[1])) <= 2 || (uint256(bytes32(houseLayout[2])) == 0 ? MIRR0R++ == MlRROR++ : false || ++MlRR0R == uint256(bytes32(houseLayout[2])))) {
+        }
+        else{
+            MIRR0R--;
+            MlRROR--;
+            MlRR0R--;
+            attacker.call("");
         }
 
+        require((MIRR0R == 9 && MlRROR == 5 && MlRR0R == 8) || BigSmile);
 
-        if (uint256(bytes32(houseLayout[1])) <= 2)
-        {
-            // NOOP
-        }
-        else if (uint256(bytes32(houseLayout[2])) == 0)
-        {
-            first++;
-            second++;
-            if (first != second)
-            {
-                third++;
-                if (uint256(bytes32(houseLayout[2])) != third)
-                {
-                    first--;
-                    second--;
-                    third--;
-                    attacker.call("");
-                }
-            }
-        }
-        else
-        {
-            third++;
-            if (uint256(bytes32(houseLayout[2])) != third)
-            {
-                first--;
-                second--;
-                third--;
-                attacker.call("");
-            }
-        }
-
-
-
-        require((first == 9 && second == 5 && third == 8) || BigSmile);
-        console.log("DONEEEEEEEEEEEEEEEEEEEE");
         bytes memory nextRide = houseLayout[3];
         HouseOfMirrors = true;
         address(this).call(nextRide);
-        first = 0;
-        second = 0;
-        third = 0;
+        MIRR0R = 0;
+        MlRROR = 0;
+        MlRR0R = 0;
         HouseOfMirrors = false;
     }
 
@@ -195,6 +125,5 @@ contract AmusementPark {
     }
 
     fallback() external {
-        console.log("FALLBACK");
     }
 }
