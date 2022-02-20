@@ -11,7 +11,7 @@ my repo is [here](https://github.com/sherlock-protocol/sherlock-ctf-0x0-RomiRand
  Done               | User                  | Setup                                      | Challenge                                  |
  ------------------ | --------------------- | ------------------------------------------ | ------------------------------------------ |
  :heavy_check_mark: | 0xmoostorm            | 0x5e40D0d98126323b81246008d386a93BA091704f | 0xE442a00a4587677c945598e19DF41822e851c1DE |
- :x:                | 0xNazgul (unsolvable) | 0xd80960575d177A09FEb8497dBaE9F6583fcFe297 | 0x75b665c3695293659949c18719d046089F423834 |
+ :heavy_check_mark: | 0xNazgul (unsolvable) | 0xd80960575d177A09FEb8497dBaE9F6583fcFe297 | 0x75b665c3695293659949c18719d046089F423834 |
  :heavy_check_mark: | agusduha              | 0x459D9C80482c541deC1Aa491209EF598BF7c9344 | 0x1020dFFD73141616fa7A931feE757DC9114B79D9 |
  :x:                | bahurum               | 0xABF1f66a9fb48F3f5b75C8A83FB5854A9d906343 | 0x68C3CA33c766cd60E4Af98D697EBd541B4DA7968 |
  :heavy_check_mark: | band0x                | 0x46C9489797c5647F850dD3A5bcB13C240bcd383A | 0xD2034a50C5Adc8A190D4f8c8EE18643Ab8A0ff05 |
@@ -23,7 +23,7 @@ my repo is [here](https://github.com/sherlock-protocol/sherlock-ctf-0x0-RomiRand
  :heavy_check_mark: | iflp                  | 0x38B500E61267Ee672c823bE3a8fA559236Bd1FD3 | 0x070Cd04E0Ab2bF1E10411f7aB1b0972164F72879 |
  :heavy_check_mark: | johngish              | 0x427255B0e21A7f0D809c7cE854569A10df44378d | 0x2Dec5971b627485A50af67a921C6ADB6CC3ffCe4 |
  :heavy_check_mark: | JustDravee            | 0x1f5c09a7d6a9B30b43DDDAABD384425DEe0ADe91 | 0xc7e13b9c94Eb3902Fa272E83Bb4D19392d09eF4d |
- :x:                | KahanMajmudar         |                                            |
+ :heavy_check_mark: | KahanMajmudar         |                                            |
  :heavy_check_mark: | kankan-0              | 0x9e6C0511d07695420A0B57003d6e8c133Cd0185d | 0x7e18A61fd65F5E5Cf693257235a0A1F360aBE7d8 |
  :heavy_check_mark: | kuldeep23907          | 0x0ABBC49482097b530516d385B4dD183b59073f1C | 0x7DC33b58B3258a745C0ADbfC46d8A4B543254f24 |
  :x:                | lucyoa                | 0xe95dF719Fc223CD8E57bA9bAAb8E86bEDF3e5d69 | 0x4C9bf01acEA21DDC7Ca25d49d301B8bDd63c1966 |
@@ -32,7 +32,7 @@ my repo is [here](https://github.com/sherlock-protocol/sherlock-ctf-0x0-RomiRand
  :heavy_check_mark: | naps62                | 0x4742FD1862E94dc74AeD62A96B6374E68e658f80 | 0xA1BCb047E9dc4aCcB36c14288239f9283DF3E68e |
  :x:                | PeterisPrieditis      | 0x64A9fcaD8D299aF9B1a96dA17458c0b3D876b687 | 0x94f12A6fb7D9B0cBBc43CdDC6A4827649f757c72 |
  :heavy_check_mark: | plotchy               | 0x869a2D3856BE26cfE77cC7Cb6579219d13373Bc9 | 0xebb997D2FabE73df8cF88Ab28b82B70741592525 |
- :x:                | RomiRand              | 0x85CCd0c58Fe07DC6716f1EfCcAba0164b97ae66B | 0x3dc21F58F3b77aDD4AD5D40992C0B431bdFFc6B8 |
+ :heavy_check_mark: | RomiRand              | 0x85CCd0c58Fe07DC6716f1EfCcAba0164b97ae66B | 0x3dc21F58F3b77aDD4AD5D40992C0B431bdFFc6B8 |
  :x:                | saianmk               | 0xbFB2C43021629C87b83C97F1FAC8D5f6b1078593 | 0xB5193e99607e7e63B49ACC48fCe0AC7A3676e4F6 |
  :heavy_check_mark: | sidduHERE             | 0x76BB80b4F1bA62eD2665f537f605C3593daCc458 | 0x43c3E684cfCD27083f7156E7d883FC7e449e1c59 |
  :x:                | smbsp                 | 0x838Ed804d95044516C16473C91388AE195da0B76 | 0xf8cd9B34e1B526Fef4D0eb2cA595D3D349F2301a |
