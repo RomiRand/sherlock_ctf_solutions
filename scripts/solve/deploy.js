@@ -418,6 +418,27 @@ async function main() {
         await (await exploit.exploit()).wait();
         console.log(author, ":", await setup.isSolved());
     }
+
+    // luksgrin
+    author = "luksgrin";
+    SETUP = await ethers.getContractFactory("contracts/" + author + "/Setup.sol:Setup");
+    setup = await SETUP.attach("0x9BDCf71048DFd8ef1C03a7ae3EDe79F04A096B7F");
+    challenge = await ethers.getContractAt("HauntedDungeon", await setup.instance());
+    if (challenge.address != "0x137A5B4bB53A62BD1Db46e563b89D1884afaC0Ac")
+    {
+        console.log("address:", challenge.address);
+        throw("error");
+    }
+    solved = await setup.isSolved();
+    console.log(author, ":", solved);
+
+    if (!solved)
+    {
+        const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
+        exploit = await EXPLOIT.deploy(challenge.address, {value: parseEther("10")});
+        await (await exploit.exploit()).wait();
+        console.log(author, ":", await setup.isSolved());
+    }
 }
 
 
