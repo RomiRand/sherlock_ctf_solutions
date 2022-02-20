@@ -17,7 +17,7 @@ my repo is [here](https://github.com/sherlock-protocol/sherlock-ctf-0x0-RomiRand
  :heavy_check_mark: | band0x                | 0x46C9489797c5647F850dD3A5bcB13C240bcd383A | 0xD2034a50C5Adc8A190D4f8c8EE18643Ab8A0ff05 |
  :heavy_check_mark: | Baraa42               | 0xFfb20eF6668F8160934FD84b60F3DeD127F787Aa | 0x664152c40e3bA69F3791dD07EdB6dbF4444ccF23 |
  :heavy_check_mark: | BowTiedPickle         | 0xfF2c41d306098Ce69316C781137EaF05FABDFF6b | 0xF8e8370A8d0a840DB47B2d52BEe5C549aD04809a |
- :x:                | chaboo                | 0x0a73CA730FaF56126487196a4B7E10B2A9B3df67 | 0x014D1921A1237b6e8fF3FA960333329667F7e242 |
+ :heavy_check_mark: | chaboo                | 0x0a73CA730FaF56126487196a4B7E10B2A9B3df67 | 0x014D1921A1237b6e8fF3FA960333329667F7e242 |
  :heavy_check_mark: | ebaizel               | 0x5364B5A9e489b495CaAE4722e9706C817Cf54433 | 0x784B7A7A25ED38EF830AEFe7985c64f3AdF08346 |
  :heavy_check_mark: | hack3r-0m             | 0xA083913ed673b23dC5FB921b3909021CacFD794C | 0x16051547CbaD42bBec882A7E9e6091796d0D1f50 |
  :heavy_check_mark: | iflp                  | 0x38B500E61267Ee672c823bE3a8fA559236Bd1FD3 | 0x070Cd04E0Ab2bF1E10411f7aB1b0972164F72879 |

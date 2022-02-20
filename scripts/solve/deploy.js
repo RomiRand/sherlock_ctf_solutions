@@ -480,6 +480,27 @@ async function main() {
         exploit = await EXPLOIT.deploy(challenge.address, {value: 1});
         console.log(author, ":", await setup.isSolved());
     }
+
+    // chaboo
+    author = "chaboo";
+    SETUP = await ethers.getContractFactory("contracts/" + author + "/Setup.sol:Setup");
+    setup = await SETUP.attach("0x0a73CA730FaF56126487196a4B7E10B2A9B3df67");
+    challenge = await ethers.getContractAt("SwissTreasury", await setup.instance());
+    if (challenge.address != "0x014D1921A1237b6e8fF3FA960333329667F7e242")
+    {
+        console.log("address:", challenge.address);
+        throw("error");
+    }
+    solved = await setup.isSolved();
+    console.log(author, ":", solved);
+
+    if (!solved)
+    {
+        const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
+        exploit = await EXPLOIT.deploy(challenge.address);
+        await (await exploit.exploit()).wait();
+        console.log(author, ":", await setup.isSolved());
+    }
 }
 
 
