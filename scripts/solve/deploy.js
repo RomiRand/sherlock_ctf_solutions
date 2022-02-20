@@ -501,6 +501,26 @@ async function main() {
         await (await exploit.exploit()).wait();
         console.log(author, ":", await setup.isSolved());
     }
+
+    // bahurum
+    author = "bahurum";
+    SETUP = await ethers.getContractFactory("contracts/" + author + "/Setup.sol:Setup");
+    setup = await SETUP.attach("0xABF1f66a9fb48F3f5b75C8A83FB5854A9d906343");
+    challenge = await ethers.getContractAt("Inflation", await setup.instance());
+    if (challenge.address != "0x68C3CA33c766cd60E4Af98D697EBd541B4DA7968")
+    {
+        console.log("address:", challenge.address);
+        throw("error");
+    }
+    solved = await setup.isSolved();
+    console.log(author, ":", solved);
+
+    if (!solved)
+    {
+        const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
+        exploit = await EXPLOIT.deploy(challenge.address);
+        console.log(author, ":", await setup.isSolved());
+    }
 }
 
 
