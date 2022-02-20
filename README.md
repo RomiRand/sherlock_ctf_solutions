@@ -14,7 +14,7 @@ my repo is [here](https://github.com/sherlock-protocol/sherlock-ctf-0x0-RomiRand
  :x:                | 0xNazgul (unsolvable) | 0xd80960575d177A09FEb8497dBaE9F6583fcFe297 | 0x75b665c3695293659949c18719d046089F423834 |
  :heavy_check_mark: | agusduha              | 0x459D9C80482c541deC1Aa491209EF598BF7c9344 | 0x1020dFFD73141616fa7A931feE757DC9114B79D9 |
  :x:                | bahurum               | 0xABF1f66a9fb48F3f5b75C8A83FB5854A9d906343 | 0x68C3CA33c766cd60E4Af98D697EBd541B4DA7968 |
- :x:                | band0x                | 0x46C9489797c5647F850dD3A5bcB13C240bcd383A | 0xD2034a50C5Adc8A190D4f8c8EE18643Ab8A0ff05 |
+ :heavy_check_mark: | band0x                | 0x46C9489797c5647F850dD3A5bcB13C240bcd383A | 0xD2034a50C5Adc8A190D4f8c8EE18643Ab8A0ff05 |
  :x:                | Baraa42               | 0xFfb20eF6668F8160934FD84b60F3DeD127F787Aa | 0x664152c40e3ba69f3791dd07edb6dbf4444ccf23 |
  :heavy_check_mark: | BowTiedPickle         | 0xfF2c41d306098Ce69316C781137EaF05FABDFF6b | 0xF8e8370A8d0a840DB47B2d52BEe5C549aD04809a |
  :x:                | chaboo                | 0x0a73CA730FaF56126487196a4B7E10B2A9B3df67 | 0x014D1921A1237b6e8fF3FA960333329667F7e242 |

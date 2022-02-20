@@ -397,6 +397,27 @@ async function main() {
         await (await exploit.play()).wait();
         console.log(author, ":", await setup.isSolved());
     }
+
+    // band0x
+    author = "band0x";
+    SETUP = await ethers.getContractFactory("contracts/" + author + "/Setup.sol:Setup");
+    setup = await SETUP.attach("0x46C9489797c5647F850dD3A5bcB13C240bcd383A");
+    challenge = await ethers.getContractAt("BecomeMaster", await setup.instance());
+    if (challenge.address != "0xD2034a50C5Adc8A190D4f8c8EE18643Ab8A0ff05")
+    {
+        console.log("address:", challenge.address);
+        throw("error");
+    }
+    solved = await setup.isSolved();
+    console.log(author, ":", solved);
+
+    if (!solved)
+    {
+        const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
+        exploit = await EXPLOIT.deploy(challenge.address);
+        await (await exploit.exploit()).wait();
+        console.log(author, ":", await setup.isSolved());
+    }
 }
 
 
