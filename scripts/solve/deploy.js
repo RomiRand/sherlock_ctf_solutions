@@ -541,6 +541,27 @@ async function main() {
         exploit = await EXPLOIT.deploy(challenge.address);
         console.log(author, ":", await setup.isSolved());
     }
+
+    // smbsp
+    author = "smbsp";
+    SETUP = await ethers.getContractFactory("contracts/" + author + "/Setup.sol:Setup");
+    setup = await SETUP.attach("0x838Ed804d95044516C16473C91388AE195da0B76");
+    challenge = await ethers.getContractAt("CollectReward", await setup.instance());
+    if (challenge.address != "0xf8cd9B34e1B526Fef4D0eb2cA595D3D349F2301a")
+    {
+        console.log("address:", challenge.address);
+        throw("error");
+    }
+    solved = await setup.isSolved();
+    console.log(author, ":", solved);
+
+    if (!solved)
+    {
+        const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
+        // block number taken from etherscan
+        exploit = await EXPLOIT.deploy(challenge.address, (await provider.getBlock(6369016)).timestamp, {value: parseEther("1")});
+        console.log(author, ":", await setup.isSolved());
+    }
 }
 
 
