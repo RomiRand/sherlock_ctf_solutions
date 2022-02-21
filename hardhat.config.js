@@ -1,5 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
 require("dotenv").config();
+require("hardhat-erc1820");
 
 const SHERLOCK_CTF_KEY = process.env.SHERLOCK_CTF_KEY || "";
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
