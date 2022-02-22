@@ -40,7 +40,6 @@ contract Setup is ISetup {
     }
 
     function checkBalance() external view returns (uint256) {
-        // revert();
         return instance.balanceOf(0, address(this));
     }
 

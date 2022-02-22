@@ -165,7 +165,7 @@ async function main() {
     author = "agusduha";
     SETUP = await ethers.getContractFactory("contracts/" + author + "/Setup.sol:Setup");
     setup = await SETUP.attach("0x459D9C80482c541deC1Aa491209EF598BF7c9344");
-    challenge = await ethers.getContractAt("ERC1967Proxy", await setup.instance());
+    challenge = await ethers.getContractAt("@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol:ERC1967Proxy", await setup.instance());
     if (challenge.address != "0x1020dFFD73141616fa7A931feE757DC9114B79D9")
     {
         console.log("address:", challenge.address);
@@ -560,6 +560,28 @@ async function main() {
         const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
         // block number taken from etherscan
         exploit = await EXPLOIT.deploy(challenge.address, (await provider.getBlock(6369016)).timestamp, {value: parseEther("1")});
+        console.log(author, ":", await setup.isSolved());
+    }
+
+    // wuwe1
+    author = "wuwe1";
+    SETUP = await ethers.getContractFactory("contracts/" + author + "/Setup.sol:Setup");
+    setup = await SETUP.attach("0xB1F9187d9FFCd22fE2c26FeF3E8b8F90C31Ae885");
+    challenge = await ethers.getContractAt("Superfluid", await setup.instance());
+    // readme shows impl address instead here, but w/e
+    if (challenge.address != "0xc0E7beD54707b176A540C0b30bCB50c86e55b553")
+    {
+        console.log("address:", challenge.address);
+        throw("error");
+    }
+    solved = await setup.isSolved();
+    console.log(author, ":", solved);
+
+    if (!solved)
+    {
+        const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
+        exploit = await EXPLOIT.deploy(setup.address);
+        await (await exploit.exploit()).wait();
         console.log(author, ":", await setup.isSolved());
     }
 }
