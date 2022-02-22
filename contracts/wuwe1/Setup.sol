@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.4;
 
-import "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol";
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts-4-3-1/proxy/ERC1967/ERC1967Proxy.sol";
+import "@openzeppelin/contracts-4-3-1/token/ERC20/ERC20.sol";
 import "./ISetup.sol";
 import "./Superfluid.sol";
 
@@ -40,6 +40,7 @@ contract Setup is ISetup {
     }
 
     function checkBalance() external view returns (uint256) {
+        // revert();
         return instance.balanceOf(0, address(this));
     }
 
