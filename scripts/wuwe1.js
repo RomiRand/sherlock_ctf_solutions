@@ -1,21 +1,19 @@
-const { parseEther } = require("ethers/lib/utils");
+const { parseEther, parseUnits, formatUnits } = require("ethers/lib/utils");
 var path = require('path');
 var scriptName = path.basename(__filename, '.js');
-console.log(scriptName);
+const { ethers, waffle} = require("hardhat");
+const provider = waffle.provider;
 
 async function main() {
   const SETUP = await ethers.getContractFactory("contracts/" + scriptName + "/Setup.sol:Setup");
   const EXPLOIT = await ethers.getContractFactory("contracts/" + scriptName + "/Exploit.sol:Exploit");
-
-  const setup = await SETUP.deploy({ value: parseEther("1")});
-  const victim = await ethers.getContractAt(
-    "contracts/sidduHERE/ExampleQuizExploit.sol:ExampleQuizExploit",
-    await setup.instance()
-  );
-
+  
+  const setup = await SETUP.deploy();
+  const challenge = await ethers.getContractAt("Superfluid", await setup.instance());
+  
   console.log("solved:", await setup.isSolved());
-  exploit = await EXPLOIT.deploy(victim.address, { value: parseEther("1")});
-  await exploit.exploit();
+  exploit = await EXPLOIT.deploy(setup.address);
+  await (await exploit.exploit()).wait();
   console.log("solved:", await setup.isSolved());
 }
 

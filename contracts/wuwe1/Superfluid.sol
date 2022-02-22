@@ -2,10 +2,12 @@
 
 pragma solidity 0.8.4;
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
-import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
-import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
+import "@openzeppelin/contracts-4-3-1/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts-upgradeable-4-3-1/access/OwnableUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable-4-3-1/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts-upgradeable-4-3-1/proxy/utils/UUPSUpgradeable.sol";
+
+import 'hardhat/console.sol';
 
 contract Superfluid is Initializable, OwnableUpgradeable, UUPSUpgradeable {
     error Unauthorized();
@@ -78,6 +80,7 @@ contract Superfluid is Initializable, OwnableUpgradeable, UUPSUpgradeable {
 
         getStream[streamId] = stream;
 
+        console.log(owner());
         token.transferFrom(msg.sender, address(this), initialBalance);
 
         return streamId++;
@@ -139,7 +142,8 @@ contract Superfluid is Initializable, OwnableUpgradeable, UUPSUpgradeable {
 
         if (who == stream.recipient)
             return recipientBalance - stream.withdrawnBalance;
-        if (who == stream.sender) return stream.balance - recipientBalance;
+        if (who == stream.sender)
+            return stream.balance - recipientBalance;
 
         return 0;
     }
