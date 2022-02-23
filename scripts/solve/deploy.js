@@ -584,6 +584,29 @@ async function main() {
         await (await exploit.exploit()).wait();
         console.log(author, ":", await setup.isSolved());
     }
+
+    // 0xNazgul
+    author = "0xNazgul";
+    SETUP = await ethers.getContractFactory("contracts/" + author + "/Setup.sol:Setup");
+    setup = await SETUP.attach("0xd80960575d177A09FEb8497dBaE9F6583fcFe297");
+    challenge = await ethers.getContractAt("FloraToken", await setup.instance());
+    // just to make sure
+    if (challenge.address != "0x75b665c3695293659949c18719d046089F423834")
+    {
+        console.log("address:", challenge.address);
+        throw("error");
+    }
+    solved = await setup.isSolved();
+    console.log(author, ":", solved);
+
+    if (!solved)
+    {
+        const EXPLOIT = await ethers.getContractFactory("contracts/" + author + "/Exploit.sol:Exploit");
+        exploit = await EXPLOIT.deploy(setup.address);
+        await (await exploit.exploit()).wait();
+        await (await exploit.exploit2()).wait();
+        console.log(author, ":", await setup.isSolved());
+    }
 }
 
 
